@@ -1,23 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { SvgUri } from 'react-native-svg';
 import SvgComponent from './assets/home/SvgComponent';
 import { NameIconSvg } from './assets/home/NameIconSvg';
+import  PillBtn  from './components/PillBtn';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
 
-        <Pressable style={styles.pillButtons}>
-          <Text style={styles.buttonText}>LinkedIn</Text>
-        </Pressable>
-        <Pressable style={styles.pillButtons}>
-          <Text style={styles.buttonText}>Github</Text>
-        </Pressable>
-        <Pressable style={styles.pillButtons}>
-          <Text style={styles.buttonText}>GitLab</Text>
-        </Pressable>
+        <PillBtn
+                  buttonText={"LinkedIn"}
+        />
+        <PillBtn
+                  buttonText={"Github"}
+        />
+        <PillBtn
+                  buttonText={"GitLab"}
+
+        />
       </View>
 
       <View style={styles.titleSvgContainer}>
