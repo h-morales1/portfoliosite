@@ -1,7 +1,8 @@
 import { Pressable, Text, StyleSheet } from "react-native";
 import {useState} from 'react';
+import { A } from '@expo/html-elements';
 
-const PillBtn = ({buttonText}) => {
+const PillBtn = ({buttonText, buttonUrl}) => {
     const [pillvisual, setPillVisual] = useState(styles.PillButton);
     const [pillTextvisual, setPillTextVisual] = useState(styles.BtnText);
     return (
@@ -15,7 +16,7 @@ const PillBtn = ({buttonText}) => {
                 setPillTextVisual(styles.BtnText);
             }}
         >
-            <Text style={pillTextvisual}>{buttonText}</Text>
+            <A href={buttonUrl} style={pillTextvisual}>{buttonText}</A>
 
         </Pressable>
     );
