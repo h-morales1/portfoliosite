@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import SvgComponent from './assets/home/SvgComponent';
 import { NameIconSvg } from './assets/home/NameIconSvg';
 import  PillBtn  from './components/PillBtn';
@@ -59,7 +59,15 @@ export default function App() {
 
         <Text style={styles.paragraph}>{"Graduated 2023"}</Text>
       </View>
+
       <View style={styles.divider}></View>
+
+      <View style={styles.smallParaContainer}>
+        <Text style={styles.smallText}>I'm a software engineer with a fondness for low level programming.</Text>
+        <Pressable style={styles.projectsBtn}>
+          <Text style={styles.projectsBtnText}>Projects</Text>
+        </Pressable>
+      </View>
     </View>
     </SafeAreaView>
   );
@@ -100,6 +108,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
+    fontFamily: 'Inter-Regular',
     fontWeight: 'normal',
 
   },
@@ -125,6 +134,33 @@ const styles = StyleSheet.create({
     borderBottomColor: '#000',
     width: '90%',
     paddingTop: 80,
+
+  },
+  smallParaContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingTop: "5%",
+    paddingHorizontal: "5%",
+    paddingBottom: "10%",
+
+  },
+  smallText: {
+    fontSize: 30,
+    fontFamily: 'Inter-Regular',
+
+  },
+  projectsBtn: {
+    backgroundColor: '#fff',
+    borderColor: '#000',
+    borderWidth: 1,
+    borderRadius: 50,
+    paddingVertical: 50,
+    paddingHorizontal: 100,
+
+  },
+  projectsBtnText: {
+    fontSize: 40,
+    fontFamily: "Inter-Regular",
 
   },
 });
