@@ -1,17 +1,18 @@
 import { Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import SvgComponent from './assets/home/SvgComponent';
-import { NameIconSvg } from './assets/home/NameIconSvg';
-import  PillBtn  from './components/PillBtn';
+import SvgComponent from '../assets/home/SvgComponent';
+import { NameIconSvg } from '../assets/home/NameIconSvg';
+import  PillBtn  from '../components/PillBtn';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
-import { Link } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const router = useRouter();
   const [fontsLoaded, fontError] = useFonts({
-    'Inter-Regular': require('./assets/fonts/Inter-Regular.ttf'),
+    'Inter-Regular': require('../assets/fonts/Inter-Regular.ttf'),
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded || fontError) {
@@ -65,7 +66,13 @@ export default function App() {
 
       <View style={styles.smallParaContainer}>
         <Text style={styles.smallText}>I'm a software engineer with a fondness for low level programming.</Text>
-        <Pressable style={styles.projectsBtn}>
+
+        <Pressable style={styles.projectsBtn}
+                      onPress={() => {
+                          router.push("/projects")
+                      }}
+
+        >
           <Text style={styles.projectsBtnText}>Projects</Text>
         </Pressable>
       </View>
